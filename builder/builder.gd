@@ -2,7 +2,8 @@ class_name Builder
 extends GridMap
 
 
-const GRID_CELL_SIZE:float = 1.0
+const VALID_ID:int = 0
+const PART_ID:int = 1
 
 
 var build_area_width:int = 5
@@ -14,6 +15,17 @@ var build_area_height:int = 5
 
 func _process(delta):
 	highlight_mouse_position()
+
+
+func _input(event):
+	if event is InputEventMouseButton and event.is_pressed():
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			place_part_on_grid(get_mouse_coordinates())
+
+
+func place_part_on_grid(coordinates:Vector3) -> void:
+	# TODO: Check part size, overlap
+	set_cell_item(coordinates, PART_ID)
 
 
 func highlight_mouse_position() -> void:

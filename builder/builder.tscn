@@ -1,31 +1,40 @@
-[gd_scene load_steps=9 format=3 uid="uid://c075dqxtbhdrt"]
+[gd_scene load_steps=10 format=3 uid="uid://c075dqxtbhdrt"]
 
+[ext_resource type="BoxMesh" uid="uid://cpdprnf8h50be" path="res://builder/flat_mesh.tres" id="1_pm12r"]
 [ext_resource type="Script" uid="uid://b8tgut0jp4e1c" path="res://builder/builder.gd" id="1_uth50"]
 [ext_resource type="Texture2D" uid="uid://bs6bly7a8saf6" path="res://builder/highlight.png" id="2_hh825"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hh825"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ipq7a"]
 transparency = 1
 shading_mode = 0
-albedo_color = Color(1, 1, 1, 0.164706)
+albedo_color = Color(0, 0.329412, 0.623529, 0.517647)
 
-[sub_resource type="BoxMesh" id="BoxMesh_hh825"]
-material = SubResource("StandardMaterial3D_hh825")
+[sub_resource type="BoxMesh" id="BoxMesh_xab4a"]
+material = SubResource("StandardMaterial3D_ipq7a")
 size = Vector3(1, 0.01, 1)
 
 [sub_resource type="MeshLibrary" id="MeshLibrary_hh825"]
 item/0/name = "valid"
-item/0/mesh = SubResource("BoxMesh_hh825")
+item/0/mesh = ExtResource("1_pm12r")
 item/0/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 item/0/mesh_cast_shadow = 1
 item/0/shapes = []
 item/0/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/0/navigation_layers = 1
+item/1/name = "part"
+item/1/mesh = SubResource("BoxMesh_xab4a")
+item/1/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+item/1/mesh_cast_shadow = 1
+item/1/shapes = []
+item/1/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/1/navigation_layers = 1
 
 [sub_resource type="QuadMesh" id="QuadMesh_uth50"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pm12r"]
 transparency = 1
 cull_mode = 2
+no_depth_test = true
 shading_mode = 0
 albedo_texture = ExtResource("2_hh825")
 
